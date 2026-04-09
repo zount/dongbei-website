@@ -161,8 +161,8 @@ export default function App() {
                 background: "#fff",
                 boxShadow: "0 2px 10px rgba(0,0,0,0.12)",
                 display: "grid",
-                gridTemplateColumns: "2.1fr 1fr",
-                minHeight: "520px",
+                gridTemplateColumns: window.innerWidth <= 768 ? "1fr" : "2.1fr 1fr",
+                minHeight: window.innerWidth <= 768 ? "auto" : "520px",
                 overflow: "hidden",
               }}
             >
@@ -172,7 +172,7 @@ export default function App() {
                   backgroundImage: `url(${currentProject.image})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  minHeight: "520px",
+                  minHeight: window.innerWidth <= 768 ? "260px" : "520px",
                 }}
               />
 
