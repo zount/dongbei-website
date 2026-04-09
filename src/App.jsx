@@ -263,12 +263,12 @@ export default function App() {
   </h2>
 
   <div style={{
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gap: "28px",
-    maxWidth: "1200px",
-    margin: "0 auto"
-  }}>
+  display: "grid",
+  gridTemplateColumns: window.innerWidth <= 768 ? "1fr" : "repeat(3, 1fr)",
+  gap: "28px",
+  maxWidth: "1200px",
+  margin: "0 auto"
+}}>
 
     <div style={{ background: "#fff", padding: "20px" }}>
       <img src="/Dadong.jpg" style={{ width: "100%", height: "220px", objectFit: "cover" }} />
