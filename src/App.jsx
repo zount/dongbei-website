@@ -75,15 +75,17 @@ export default function App() {
       {/* Hero */}
       <section
         style={{
-          position: "relative",
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          overflow: "hidden",
-          background: "linear-gradient(135deg, #ff7a18, #ffb347 55%, #fff4e8)",
-          width: "100%",
-        }}
+    position: "relative",
+    minHeight: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    overflow: "hidden",
+    backgroundImage: "url(/hero.jpg)",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    width: "100%",
+  }}
       >
         <div
           style={{
