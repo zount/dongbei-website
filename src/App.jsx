@@ -76,14 +76,15 @@ export default function App() {
       <section
         style={{
     position: "relative",
-    minHeight: "100vh",
+    minHeight: "80vh",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
     backgroundImage: "url(/hero.jpg)",
     backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundPosition: "center center",
+    padding: "60px 20px",
     width: "100%",
   }}
       >
@@ -107,7 +108,7 @@ export default function App() {
             margin: "0 auto",
           }}
         >
-          <h1 style={{ fontSize: "56px", letterSpacing: "4px", margin: 0 }}>
+          <h1 style={{ fontSize: "clamp(28px, 6vw, 56px)", letterSpacing: "4px", margin: 0 }}>
             東北開發有限公司
           </h1>
 
@@ -293,7 +294,7 @@ export default function App() {
       <section id="contact" style={{ padding: "100px 40px", background: "#fff" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "42px", marginBottom: "24px" }}>聯絡我們</h2>
-          <p style={{ fontSize: "18px", lineHeight: "1.9", color: "#555" }}>
+          <p style={{ fontSize: "clamp(14px, 3vw, 18px)", lineHeight: "1.9", color: "#555" }}>
             歡迎洽詢東北開發建案資訊、品牌合作與相關服務。
           </p>
         </div>
