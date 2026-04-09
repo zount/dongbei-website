@@ -27,10 +27,23 @@
   align-items: center;
 }
 
+.brand-link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.brand-link:visited {
+  color: inherit;
+}
+
 .brand-title {
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 2px;
+  color: #000;
+  transition: color 0.3s ease;
 }
 
 .brand-sub {
@@ -38,6 +51,15 @@
   color: #777;
   margin-top: 4px;
   letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.brand-link:hover .brand-title {
+  color: #f58b1f;
+}
+
+.brand-link:hover .brand-sub {
+  color: #f58b1f;
 }
 
 .nav {
@@ -82,7 +104,6 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
   background-image: url("/hero.jpg");
   background-size: cover;
   background-position: center;
@@ -277,6 +298,53 @@
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   margin-top: 32px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.contact-form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #f58b1f;
+  box-shadow: 0 0 0 3px rgba(245, 139, 31, 0.12);
+}
+
+.submit-btn {
+  margin-top: 8px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 999px;
+  background: #f58b1f;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #de7d17;
 }
 
 .footer {

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>預約賞屋｜東北開發</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: #f3f3f1;
+      color: #222;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 64px 20px;
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      padding: 56px 56px 48px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: #9b7b59;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #1f1f1f;
+    }
+
+    .desc {
+      margin-top: 18px;
+      font-size: 16px;
+      line-height: 1.9;
+      color: #666;
+    }
+
+    .notice {
+      margin-top: 18px;
+      font-size: 14px;
+      color: #9b7b59;
+    }
+
+    .divider {
+      margin: 30px 0 34px;
+      height: 1px;
+      background: #e6e1db;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px 24px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      display: block;
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .required {
+      color: #c15f3f;
+      margin-left: 4px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #d8d2cb;
+      background: #fff;
+      padding: 14px 14px;
+      font-size: 15px;
+      color: #222;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      border-radius: 0;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #b98a5c;
+      box-shadow: 0 0 0 3px rgba(185, 138, 92, 0.12);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .hint {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #888;
+      line-height: 1.7;
+    }
+
+    .actions {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      display: flex;
+      justify-content: flex-start;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .submit-btn {
+      border: none;
+      background: #b98a5c;
+      color: white;
+      padding: 14px 34px;
+      font-size: 15px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background: #a97c50;
+      transform: translateY(-1px);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      color: #777;
+      font-size: 14px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #cfc7bf;
+    }
+
+    .back-link:hover {
+      color: #444;
+      border-bottom-color: #999;
+    }
+
+    .footer-note {
+      margin-top: 26px;
+      font-size: 13px;
+      color: #8a8a8a;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 28px 14px;
+      }
+
+      .card {
+        padding: 30px 22px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .submit-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="wrap">
+      <div class="card">
+        <div class="eyebrow">BOOKING</div>
+        <h1>預約賞屋</h1>
+        <div class="desc">
+          歡迎填寫以下資料，我們將安排專人與您聯繫，提供完整建案資訊、
+          賞屋安排與相關購屋諮詢服務。
+        </div>
+        <div class="notice">＊為必填欄位</div>
+        <div class="divider"></div>
+
+        <form action="https://formspree.io/f/mykbvlwv" method="POST">
+          <div class="field">
+            <label for="type">聯絡事項<span class="required">＊</span></label>
+            <select id="type" name="type" required>
+              <option value="">請選擇</option>
+              <option value="預約賞屋">預約賞屋</option>
+              <option value="建案諮詢">建案諮詢</option>
+              <option value="投資合作">投資合作</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="project">預約建案<span class="required">＊</span></label>
+            <select id="project" name="project" required>
+              <option value="岡山好好">岡山好好</option>
+              <option value="鳳山好好">鳳山好好</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="name">姓名<span class="required">＊</span></label>
+            <input id="name" name="name" type="text" required />
+          </div>
+
+          <div class="field">
+            <label for="phone">聯絡電話<span class="required">＊</span></label>
+            <input id="phone" name="phone" type="tel" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" />
+          </div>
+
+          <div class="field">
+            <label for="time">方便聯絡時段</label>
+            <input id="time" name="time" type="text" placeholder="例如：平日晚上 / 週末下午" />
+          </div>
+
+          <div class="field full">
+            <label for="message">需求說明</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="例如：想了解坪數、總價、車位，或希望安排週末賞屋。"
+            ></textarea>
+            <div class="hint">
+              您可於此填寫賞屋需求、購屋條件、希望聯繫方式或其他想了解的資訊。
+            </div>
+          </div>
+
+          <div class="actions">
+            <button class="submit-btn" type="submit">送出預約</button>
+            <a class="back-link" href="/" target="_blank" rel="noreferrer">返回官網</a>
+          </div>
+        </form>
+
+        <div class="footer-note">
+          送出後，我們將盡快由專人與您聯繫。實際賞屋安排與建案資訊，仍以現場及專人說明為準。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const project = params.get("project");
+
+    if (project) {
+      const projectSelect = document.getElementById("project");
+      if (projectSelect) {
+        projectSelect.value = project;
+      }
+    }
+  </script>
+</body>
+</html>
